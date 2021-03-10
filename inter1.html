@@ -15,6 +15,7 @@
         <p id="plantLine"></p>
         <p id="motorbikeLine"></p>
         <p id="waterLine"></p>
+        <p id="dangerLine"></p>
     </div>
 
 
@@ -85,9 +86,7 @@ class Animal {
     }
 
     showMessage() {
-        return `My ${this.type} is a ${this.breed}, its ${this.weight} kg and it is ${this.age} years old. It's name is ${this.animalName}`;
-        // (this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed);
-        // return this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed
+        return `My ${this.type} is a ${this.breed}, it weights ${this.weight} kg and it is ${this.age} years old. It's name is ${this.animalName} .`;
     }
 }
 
@@ -109,10 +108,11 @@ class Fish extends Animal {
         this.scalesNr = scalesNr;
     }
     showMessage() {
-        return super.showMessage() + "That fish is awesome it has " + this.finsNr + " fins and with the number of scales of " + this.scalesNr + " it makes it even more unique "
+        return super.showMessage() + " That fish is awesome, it has " + this.finsNr + " fins and with the number of " + this.scalesNr + " scales, it looks like dipped in mercury."
 
     }
-    var waterCreature1 = new Fish ("FishyFish", "pacific monster", 1000, 258, 10, 299855);
+}
+    var waterCreature1 = new Fish ("FishyFish", "pacific monster", 54436786, 258, "Spikey", 12, 9998888299855);
 
     document.getElementById("waterLine").innerHTML = waterCreature1.showMessage();
 
@@ -120,7 +120,7 @@ class Fish extends Animal {
 
 
 
-
+// doing plants ;)
 class Plant {
     type;
     color;
@@ -139,8 +139,6 @@ class Plant {
 
     showMessage() {
         return `My ${this.type} is ${this.color}. Is it beautiful? ${this.beautiful}. It is now ${this.age} years old. To be precise, it is ${this.kind}. We call it ${this.plantName}`;
-        // (this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed);
-        // return this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed
     }
 }
 
@@ -150,6 +148,24 @@ var plant3 = new Plant ("nettle", "green", true, 1, "urtica dioica", "Crystal");
 
 
 document.getElementById("plantLine").innerHTML = (plant1.showMessage()) + "<br>" + (plant2.showMessage()) + "<br>" + (plant3.showMessage());
+
+// adding extras
+class Weeds extends Plant {
+    superPower;
+
+    constructor(type, color, beautiful, age, kind, plantName, superPower) {
+    super(type, color, beautiful, age, kind, plantName);
+    this.superPower = superPower;
+    }
+    showMessage() {
+        return super.showMessage() + " it can "  + this.superPower;
+    }
+}   
+
+var x = new Plant ("spreadollus", "brown", false, 12, "spreadollus commonullus", "Zygfryd", "tie legs and pull people ungerground");
+document.getElementById("dangerLine").innerHTML = x.showMessage();
+
+
 
 </script>
 
