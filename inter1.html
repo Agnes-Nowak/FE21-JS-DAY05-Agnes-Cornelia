@@ -32,7 +32,7 @@ class Car {
     }
 
     showMessage() {
-        return `My car is a ${this.brand}, with the color of ${this.color} and the max speed is ${this.maxSpeed} km/h. It's new! ${this.newOld}`;
+        return `My vehicle is a ${this.brand}, with the color of ${this.color} and the max speed is ${this.maxSpeed} km/h. It's new! ${this.newOld}`;
     }
 }
 
@@ -46,21 +46,21 @@ document.getElementById("carLine1").innerHTML = (car1.showMessage()) + "<br>" + 
 document.getElementById("carLine2").innerHTML = car2.showMessage();
 document.getElementById("carLine3").innerHTML = car3.showMessage();
 
-class Motorbike extends Cars {
+class Motorbike extends Car {
     coolnessFactor;
 
-    constructor (brand, color, newOld, maxSpeed, coolnessFactor) {
+    constructor(brand, color, newOld, maxSpeed, coolnessFactor) {
         super(brand, color, newOld, maxSpeed);
         this.coolnessFactor = coolnessFactor;
-
+    }
     showMessage(){
-        return `My car is a ${this.brand}, with the color of ${this.color} and the max speed is ${this.maxSpeed} km/h. It's new! ${this.newOld}. It's a motorbike so the coolness Factor is ${coolnessFactor}`;
+        return super.showMessage() + "It's a motorbike so the coolness Factor is " + this.coolnessFactor;
     }
 }
 
-// var bike1 = new Motorbike ("Suzuki", "blue", 280, true, 10/10);
+var bike1 = new Motorbike ("Suzuki", "blue", 280, true, 10/10);
 
-// document.getElementById("motorbikeLine").innerHTML = bike1.showMessage();
+document.getElementById("motorbikeLine").innerHTML = bike1.showMessage();
 
 class Animal {
     type;
