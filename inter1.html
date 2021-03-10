@@ -14,6 +14,7 @@
         <p id="animalLine"></p>
         <p id="plantLine"></p>
         <p id="motorbikeLine"></p>
+        <p id="waterLine"></p>
     </div>
 
 
@@ -62,6 +63,13 @@ var bike1 = new Motorbike ("Suzuki", "blue", 280, true, 10/10);
 
 document.getElementById("motorbikeLine").innerHTML = bike1.showMessage();
 
+
+
+
+
+
+// we are doing animals here... 
+
 class Animal {
     type;
     breed;
@@ -89,6 +97,28 @@ var animal3 = new Animal ("beetle", "chrzaszcz", 0, 1, "Marigold");
 
 
 document.getElementById("animalLine").innerHTML = (animal1.showMessage()) + "<br>" + (animal2.showMessage()) + "<br>" + (animal3.showMessage());
+
+
+class Fish extends Animal {
+    finsNr;
+    scalesNr;
+
+    constructor (type, breed, weight, age, animalName, finsNr, scalesNr) {
+        super(type, breed, weight, age, animalName);
+        this.finsNr = finsNr;
+        this.scalesNr = scalesNr;
+    }
+    showMessage() {
+        return super.showMessage() + "That fish is awesome it has " + this.finsNr + " fins and with the number of scales of " + this.scalesNr + " it makes it even more unique "
+
+    }
+    var waterCreature1 = new Fish ("FishyFish", "pacific monster", 1000, 258, 10, 299855);
+
+    document.getElementById("waterLine").innerHTML = waterCreature1.showMessage();
+
+
+
+
 
 
 class Plant {
