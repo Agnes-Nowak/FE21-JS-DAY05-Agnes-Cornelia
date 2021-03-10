@@ -47,11 +47,37 @@ var car3 = new Car ("BMW", "green", false, 130);
 
 console.table(car1);
 
-document.getElementById("carLine1").innerHTML = (car1.showMessage()) + '\n' + (car2.showMessage()) + (car3.showMessage());
+document.getElementById("carLine1").innerHTML = (car1.showMessage()) + "<br>" + (car2.showMessage()) + "<br>" + (car3.showMessage());
 document.getElementById("carLine2").innerHTML = car2.showMessage();
 document.getElementById("carLine3").innerHTML = car3.showMessage();
 
+class Animal {
+    type;
+    breed;
+    weight;
+    age;
+    animalName;
+    constructor (type, breed, weight, age, animalName) {
+        this.type = type;
+        this.breed = breed;
+        this.weight = weight;
+        this.age = age;
+        this.animalName = animalName;
+    }
 
+    showMessage() {
+        return `My ${this.type} is a ${this.breed}, its ${this.weight} kg and it is ${this.age} years old. It's name is ${this.animalName}`;
+        // (this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed);
+        // return this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed
+    }
+}
+
+var animal1 = new Animal ("octopus", "giant pacific", 3, 5, "Sergio");
+var animal2 = new Animal ("unicorn", "magicus", 400, 7, "Poppy");
+var animal3 = new Animal ("beetle", "chrzaszcz", 0, 1, "Marigold");
+
+
+document.getElementById("animalLine").innerHTML = (animal1.showMessage()) + "<br>" + (animal2.showMessage()) + "<br>" + (animal3.showMessage());
 
 </script>
 
