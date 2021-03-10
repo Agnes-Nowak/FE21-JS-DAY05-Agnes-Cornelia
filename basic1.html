@@ -16,7 +16,7 @@ The message from the methods must be printed on the browser too. -->
     <p id="carLine2"></p>
     <p id="carLine3"></p>
     <p id="animalLine"></p>
-    <p id="personLine"></p>
+    <p id="plantLine"></p>
 </div>
 
 
@@ -78,6 +78,42 @@ var animal3 = new Animal ("beetle", "chrzaszcz", 0, 1, "Marigold");
 
 
 document.getElementById("animalLine").innerHTML = (animal1.showMessage()) + "<br>" + (animal2.showMessage()) + "<br>" + (animal3.showMessage());
+
+
+
+
+
+
+
+class Plant {
+    type;
+    color;
+    beautiful;
+    age;
+    kind;
+    plantName;
+    constructor (type, color, beautiful, age, kind, plantName) {
+        this.type = type;
+        this.color = color;
+        this.beautiful = beautiful;
+        this.age = age;
+        this.kind = kind;
+        this.plantName = plantName;
+    }
+
+    showMessage() {
+        return `My ${this.type} is ${this.color}. Is it beautiful? ${this.beautiful}. It is now ${this.age} years old. To be precise, it is ${this.kind}. We call it ${this.plantName}`;
+        // (this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed);
+        // return this.brand + " " + this.color + " " + this.newOld + " " + this.maxSpeed
+    }
+}
+
+var plant1 = new Plant ("succulent", "redish", true, 2, "crassula", "Moon Queen");
+var plant2 = new Plant ("daffodil", "yellow", true, 0, "dutch master", "Bert");
+var plant3 = new Plant ("nettle", "green", true, 1, "urtica dioica", "Crystal");
+
+
+document.getElementById("plantLine").innerHTML = (plant1.showMessage()) + "<br>" + (plant2.showMessage()) + "<br>" + (plant3.showMessage());
 
 </script>
 
