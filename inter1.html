@@ -151,14 +151,14 @@ document.getElementById("plantLine").innerHTML = (plant1.showMessage()) + "<br>"
 
 // adding extras
 class Weeds extends Plant {
-    superPower;
+    power;
 
-    constructor(type, color, beautiful, age, kind, plantName, superPower) {
+    constructor(type, color, beautiful, age, kind, plantName, power) {
     super(type, color, beautiful, age, kind, plantName);
-    this.superPower = superPower;
+    this.power = power;
     }
     showMessage() {
-        return super.showMessage() + " it can "  + this.superPower;
+        return super.showMessage() + " it can "  + this.power;
     }
 }   
 
